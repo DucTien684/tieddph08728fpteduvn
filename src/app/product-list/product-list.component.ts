@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { data} from '../MockData';
+import { Product } from '../product' ;
+import { ProductService} from '../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(
+private ProductService : ProductService
+  ){
+    console.log('constructor')
   }
-
+  ngOnInit(): void {
+  }
+products = data;
+selected : Product[];
+showDetail(Product){
+  this.selected = Product;
+  console.log(this.selected);
+}
+getProducts(){
+  this.products = this.ProductService.getProducts();
+}
+removeItem(id){
+  this.products = this.ProductService.removeProduct(id);
+  // this.products = this.products.filter(product => product.id != id);
+}
 }
