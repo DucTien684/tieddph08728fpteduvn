@@ -8,7 +8,10 @@ import { CategoryComponent } from './category/category.component';
 import { SlideComponent } from './slide/slide.component';
 import { FormsModule } from '@angular/forms';
 import { ProductService} from './product.service';
-import { ProductAddComponent } from './product-add/product-add.component'
+import { ProductAddComponent } from './product-add/product-add.component';
+import { HomeComponent } from './home/home.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ProductAddComponent } from './product-add/product-add.component'
     ProductListComponent,
     CategoryComponent,
     SlideComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    HomeComponent,
+    ProductEditComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
